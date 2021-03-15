@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .clock{
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            margin-top: 100px;
+            background-color: #fff;
+            border-radius: 50%;
+            border: 10px solid black;
+            position: relative;
+        }
+            /* animation: run 60s; */
+        .clock>div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+        /* 设置时针 */
+        .hour-bg{
+            height: 45%;
+            width: 60%;
+            animation: run 43200s infinite;
+        }
+        .hour{
+            height: 50%;
+            width: 6px;
+            background-color: #000;
+            margin: 0 auto;
+        }
+        /* 设置分针 */
+        .min-bg{
+            height: 70%;
+            width: 80%;
+            animation: run 3600s infinite;
+        }
+        .min{
+            height: 50%;
+            width: 4px;
+            background-color: #000;
+            margin: 0 auto;
+        }
+        /* 设置秒针*/
+        .sec-bg{
+            height: 90%;
+            width: 100%;
+            animation: run 60s steps(60) infinite;
+        }
+
+        .sec{
+            height: 50%;
+            width: 2px;
+            background-color: red;
+            margin: 0 auto;
+        }
+       
+        /* 旋转的关键帧 */
+        @keyframes run {
+            from{
+                transform: rotateZ(0);
+            }
+            to{
+                transform: rotateZ(360deg);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 创建钟表 -->
+    <div class="clock">
+            
+        <!-- 创建秒针 -->
+        <div class="sec-bg">
+            <div class="sec"></div>
+        </div>
+
+        <!-- 创建分针 -->
+        <div class="min-bg">
+            <div class="min">
+            </div>
+        </div>
+        <!-- 创建时针 -->
+        
+        <div class="hour-bg">
+            <div class="hour"></div>
+        </div>
+        
+    </div>
+
+</body>
+</html>
